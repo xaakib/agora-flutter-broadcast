@@ -1,5 +1,6 @@
 import 'package:agora_live/widgets/audience.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 // import 'package:video_player/video_player.dart';
 
 class Audience extends StatefulWidget {
@@ -10,20 +11,20 @@ class Audience extends StatefulWidget {
 }
 
 class _AudienceState extends State<Audience> {
-  // VideoPlayerController _controller;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // Pointing the video controller to our local asset.
-  //   _controller = VideoPlayerController.asset('assets/broadcast_sample.mp4')
-  //     ..initialize().then((_) {
-  //       // Once the video has been loaded we play the video and set looping to true.
-  //       _controller.play();
-  //       _controller.setLooping(true);
-  //       // Ensure the first frame is shown after the video is initialized.
-  //       setState(() {});
-  //     });
-  // }
+  VideoPlayerController _controller;
+  @override
+  void initState() {
+    super.initState();
+    // Pointing the video controller to our local asset.
+    _controller = VideoPlayerController.asset('assets/broadcast_sample.mp4')
+      ..initialize().then((_) {
+        // Once the video has been loaded we play the video and set looping to true.
+        _controller.play();
+        _controller.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized.
+        setState(() {});
+      });
+  }
   
   @override
   Widget build(BuildContext context) {
